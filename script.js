@@ -14,3 +14,14 @@ function computerPlay () {
     }
     return compSelect;
 }
+
+function playerSelection () {
+    let playSelect = prompt("Rock, Paper or Scissor? ").toLowerCase();
+    playSelect = playSelect.replace(playSelect.slice(0,1), playSelect.slice(0,1).toUpperCase());
+    if (playSelect === "Rock" || playSelect === "Paper" || playSelect === "Scissor") {
+        return playSelect;
+    }
+}
+
+
+
