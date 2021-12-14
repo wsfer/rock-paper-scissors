@@ -18,47 +18,45 @@ function computerPlay () {
     return compSelect;
 }
 
-
-
 function playRound (playerSelection, computerSelection) {
 
-    let result = null;
+    let roundResult = null;
 
     if (playerSelection === computerSelection) {
-        result = `Nobody won! both selected ${playerSelection}`;
-        return result;
+        roundResult = `Nobody won! both selected ${playerSelection}`;
+        return roundResult;
     }
 
     switch (playerSelection) {
         case "Rock":
             if (computerSelection === "Scissor") {
-                result = `You win! ${playerSelection} beats ${computerSelection}`;
+                roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
             } else if (computerSelection === "Paper") {
-                result = `You lose! ${computerSelection} beats ${playerSelection}`;
+                roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
                 computerScore++;
             }
             break;
         case "Paper":
             if (computerSelection === "Rock") {
-                result = `You win! ${playerSelection} beats ${computerSelection}`;
+                roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
             } else if (computerSelection === "Scissor") {
-                result = `You lose! ${computerSelection} beats ${playerSelection}`;
+                roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
                 computerScore++;
             }
             break;
         case "Scissor":
             if (computerSelection === "Paper") {
-                result = `You win! ${playerSelection} beats ${computerSelection}`;
+                roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
             } else if (computerSelection === "Rock") {
-                result = `You lose! ${computerSelection} beats ${playerSelection}`;
-                computerScore++
+                roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
+                computerScore++;
             }
             break;
     }
-    return result;
+    return roundResult;
 }
 
 function game() {
@@ -67,10 +65,22 @@ function game() {
         const ask = prompt("Rock, Paper or Scissor? ").toLowerCase();
         const playerSelection = ask.replace(ask.slice(0,1), ask.slice(0,1).toUpperCase());
         const computerSelection = computerPlay();
+        console.clear('a');
 
-        console.log(`Computer: ${computerSelection}, Player: ${playerSelection}`);
-        playRound(playerSelection, computerSelection);
+        console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
+        console.log(playRound(playerSelection, computerSelection));
         console.log(`SCORE: Player = ${playerScore}, Computer = ${computerScore}`);
+    }
+    
+    console.clear();
+
+    if (playerScore > computerScore) {
+        console.log("YOU WIN!");
+    } else if (playerScore < computerScore) {
+        console.log("YOU LOSE!");
+    } else {
+        console.log("NOBODY WON!");
     }
 }
 
+game();
