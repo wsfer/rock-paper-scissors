@@ -76,10 +76,13 @@ function game() {
 
     if (playerScore > computerScore) {
         console.log("YOU WIN!");
+        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
     } else if (playerScore < computerScore) {
         console.log("YOU LOSE!");
+        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
     } else {
         console.log("NOBODY WON!");
+        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
     }
 }
 
