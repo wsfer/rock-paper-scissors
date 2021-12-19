@@ -79,3 +79,6 @@ const btnRock = document.getElementById('rock');
 const btnPaper = document.getElementById('paper');
 const btnScissors = document.getElementById('scissors');
 
+btnRock.addEventListener('click', playRound);
+btnPaper.addEventListener('click', playRound);
+btnScissors.addEventListener('click', playRound);
