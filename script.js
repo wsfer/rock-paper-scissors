@@ -1,9 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
 
+document.getElementById('rock').addEventListener('click', playRound);
+document.getElementById('paper').addEventListener('click', playRound);
+document.getElementById('scissors').addEventListener('click', playRound);
+
 function computerPlay () {
     const randomNum = Math.floor(Math.random()*3);
-    const compSelector = ['Rock', 'Paper', 'Scissors'];
+    const compSelector = ['rock', 'paper', 'scissors'];
     return compSelector[randomNum];
 }
 
@@ -65,10 +69,3 @@ function game() {
     }
 }
 
-const btnRock = document.getElementById('Rock');
-const btnPaper = document.getElementById('Paper');
-const btnScissors = document.getElementById('Scissors');
-
-btnRock.addEventListener('click', playRound);
-btnPaper.addEventListener('click', playRound);
-btnScissors.addEventListener('click', playRound);
