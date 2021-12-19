@@ -61,17 +61,6 @@ function playRound (playerSelection, computerSelection) {
 
 function game() {
     
-    for (let i = 0; i < 5; i++) {
-        const ask = prompt("Rock, Paper or Scissor? ").toLowerCase();
-        const playerSelection = ask.replace(ask.slice(0,1), ask.slice(0,1).toUpperCase());
-        const computerSelection = computerPlay();
-        console.clear('a');
-
-        console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`SCORE: Player = ${playerScore}, Computer = ${computerScore}`);
-    }
-    
     console.clear();
 
     if (playerScore > computerScore) {
@@ -86,4 +75,7 @@ function game() {
     }
 }
 
-game();
+const btnRock = document.getElementById('rock');
+const btnPaper = document.getElementById('paper');
+const btnScissors = document.getElementById('scissors');
+
