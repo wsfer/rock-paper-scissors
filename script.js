@@ -2,25 +2,15 @@ let playerScore = 0;
 let computerScore = 0;
 
 function computerPlay () {
-    const randomNum = Math.floor(Math.random()*3) + 1;
-    let compSelect;
-    switch (randomNum) {
-        case 1:
-            compSelect = "Rock";
-            break;
-        case 2:
-            compSelect = "Paper";
-            break;
-        case 3:
-            compSelect = "Scissor";
-            break;
-    }
-    return compSelect;
+    const randomNum = Math.floor(Math.random()*3);
+    const compSelector = ['Rock', 'Paper', 'Scissors'];
+    return compSelector[randomNum];
 }
 
 function playRound (playerSelection, computerSelection) {
 
     let roundResult = null;
+
 
     if (playerSelection === computerSelection) {
         roundResult = `Nobody won! both selected ${playerSelection}`;
@@ -75,9 +65,9 @@ function game() {
     }
 }
 
-const btnRock = document.getElementById('rock');
-const btnPaper = document.getElementById('paper');
-const btnScissors = document.getElementById('scissors');
+const btnRock = document.getElementById('Rock');
+const btnPaper = document.getElementById('Paper');
+const btnScissors = document.getElementById('Scissors');
 
 btnRock.addEventListener('click', playRound);
 btnPaper.addEventListener('click', playRound);
