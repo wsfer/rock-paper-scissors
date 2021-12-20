@@ -50,6 +50,12 @@ img {
     height: 50px;
     margin: 5px;
     border: 1px solid black;
+    border-radius: 5px;
+}
+
+.playerUi img:hover {
+    border: 3px solid gold;
+    margin: 3px;
 }
 
 #pScore, #cScore {
@@ -69,7 +75,7 @@ img {
 h3, h1 {
     color: yellow;
     font-weight: bold;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .status {
