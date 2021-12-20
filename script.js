@@ -103,4 +103,8 @@ function restartGame () {
     results.textContent = 'Game Restarted';
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
+    const images = document.querySelectorAll('img');
+    for (let i of images) {
+        i.style.visibility = "visible";
+    }
 }
