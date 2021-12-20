@@ -69,5 +69,9 @@ function playRound (playerSelection) {
 }
 
 function checkGame () {
-    console.log('done');
+    if (playerScore == 5) {
+        results.textContent = 'YOU WIN!';
+    } else {
+        results.textContent = 'You Lose';
+    }
 }
