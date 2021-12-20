@@ -18,7 +18,7 @@ document.getElementById('Scissors').addEventListener('click', function (e) {
     playRound(e.target.id);
 });
 
-
+const results = document.getElementById('results');
 
 function playRound (playerSelection) {
     computerSelection = computerPlay();
@@ -26,7 +26,6 @@ function playRound (playerSelection) {
 
     if (playerSelection === computerSelection) {
         roundResult = `Nobody won! both selected ${playerSelection}`;
-        return roundResult;
     }
 
     switch (playerSelection) {
@@ -58,22 +57,14 @@ function playRound (playerSelection) {
             }
             break;
     }
-    console.log(roundResult);
-}
-
-function game() {
-    
-    console.clear();
-
-    if (playerScore > computerScore) {
-        console.log("YOU WIN!");
-        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
-    } else if (playerScore < computerScore) {
-        console.log("YOU LOSE!");
-        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
-    } else {
-        console.log("NOBODY WON!");
-        console.log(`Final Score: Player = ${playerScore}, Computer = ${computerScore}`);
+    results.textContent = roundResult;
+    document.getElementById('pScore').textContent = playerScore;
+    document.getElementById('cScore').textContent = computerScore;
+    if (playerScore == 5 || computerScore == 5) {
+        checkGame();
     }
 }
 
+function checkGame () {
+    console.log('done');
+}
