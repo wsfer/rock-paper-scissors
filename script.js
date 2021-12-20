@@ -88,6 +88,10 @@ function checkGame () {
         results.textContent = 'Gameover!';
         results.style.color = "red";
     }
+    const images = document.querySelectorAll('img');
+    for (let i of images) {
+        i.style.visibility = "hidden";
+    }
 }
 
 const btnRestart = document.getElementById('restart');
