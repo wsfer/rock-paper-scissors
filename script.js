@@ -71,7 +71,20 @@ function playRound (playerSelection) {
 function checkGame () {
     if (playerScore == 5) {
         results.textContent = 'YOU WIN!';
+        results.style.color = "red";
     } else {
-        results.textContent = 'You Lose';
+        results.textContent = 'Gameover!';
+        results.style.color = "red";
     }
+}
+
+const btnRestart = document.getElementById('restart');
+btnRestart.addEventListener('click', restartGame);
+
+function restartGame () {
+    playerScore = 0;
+    computerScore = 0;
+    results.textContent = 'Game Restarted';
+    playerScoreText.textContent = playerScore;
+    computerScoreText.textContent = computerScore;
 }
