@@ -11,6 +11,15 @@ header, footer {
     background-color: rgb(219, 40, 40);
 }
 
+header {
+    color: yellow;
+    border-bottom: 2px solid black;
+}
+
+footer {
+    border-top: 2px solid black;
+}
+
 a {
     text-decoration: none;
     color: yellow;
@@ -21,6 +30,7 @@ a {
     align-items: center;
     justify-content: center;
     background-color: rgb(91, 91, 223);
+    height: 500px;
 }
 
 .playerUi, .computerUi {
@@ -33,7 +43,7 @@ a {
     border: 2px solid black;
     margin: 8px;
     width: 200px;
-    
+
 }
 
 img {
