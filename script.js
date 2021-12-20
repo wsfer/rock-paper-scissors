@@ -83,11 +83,11 @@ function playRound (playerSelection) {
 function checkGame () {
     if (playerScore == 5) {
         results.textContent = 'YOU WIN!';
-        results.style.color = "black";
+        results.style.color = "yellow";
         results.style.fontWeight = "bold";
     } else {
         results.textContent = 'Gameover!';
-        results.style.color = "black";
+        results.style.color = "red";
         results.style.fontWeight = "bold";
     }
     const images = document.querySelectorAll('img');
@@ -103,6 +103,8 @@ function restartGame () {
     playerScore = 0;
     computerScore = 0;
     results.textContent = 'Game Restarted';
+    results.style.color = "black";
+    results.style.fontWeight = 300;
     playerScoreText.textContent = playerScore;
     computerScoreText.textContent = computerScore;
     const images = document.querySelectorAll('img');
