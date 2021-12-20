@@ -60,3 +60,8 @@ img {
     width: 25px;
     height: 25px;
 }
+
+h3 {
+    color: yellow;
+    font-weight: bold;
+}
