@@ -103,3 +103,8 @@ h3, h1 {
     border: 3px solid gold;
     margin: 19px;
 }
+
+.styleImage {
+    border: 3px solid gold;
+    margin: 3px;
+}

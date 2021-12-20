@@ -2,12 +2,14 @@ let playerScore = 0;
 let computerScore = 0;
 
 function computerPlay () {
+
+
     const randomNum = Math.floor(Math.random()*3);
     const compSelector = ['Rock', 'Paper', 'Scissors'];
     const computerSelection = compSelector[randomNum];
 
     const imageSelected = document.querySelector(`#comp${computerSelection}`);
-    console.log(imageSelected);
+    imageSelected.classList.add('styleImage')
 
     return computerSelection;
 }
