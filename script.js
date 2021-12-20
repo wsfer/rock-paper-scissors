@@ -83,10 +83,12 @@ function playRound (playerSelection) {
 function checkGame () {
     if (playerScore == 5) {
         results.textContent = 'YOU WIN!';
-        results.style.color = "red";
+        results.style.color = "black";
+        results.style.fontWeight = "bold";
     } else {
         results.textContent = 'Gameover!';
-        results.style.color = "red";
+        results.style.color = "black";
+        results.style.fontWeight = "bold";
     }
     const images = document.querySelectorAll('img');
     for (let i of images) {
