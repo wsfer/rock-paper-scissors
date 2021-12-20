@@ -2,15 +2,21 @@ let playerScore = 0;
 let computerScore = 0;
 
 function computerPlay () {
-
+    let imageSelected = document.querySelector('.styleImage');
 
     const randomNum = Math.floor(Math.random()*3);
     const compSelector = ['Rock', 'Paper', 'Scissors'];
     const computerSelection = compSelector[randomNum];
 
-    const imageSelected = document.querySelector(`#comp${computerSelection}`);
-    imageSelected.classList.add('styleImage')
-
+    if (!imageSelected) {
+        imageSelected = document.querySelector(`#comp${computerSelection}`);
+        imageSelected.classList.add('styleImage');
+    } else {
+        imageSelected.classList.remove('styleImage');
+        imageSelected = document.querySelector(`#comp${computerSelection}`);
+        imageSelected.classList.add('styleImage');
+    }
+    
     return computerSelection;
 }
 
