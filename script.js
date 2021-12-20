@@ -1,20 +1,28 @@
 let playerScore = 0;
 let computerScore = 0;
 
-document.getElementById('rock').addEventListener('click', playRound);
-document.getElementById('paper').addEventListener('click', playRound);
-document.getElementById('scissors').addEventListener('click', playRound);
-
 function computerPlay () {
     const randomNum = Math.floor(Math.random()*3);
-    const compSelector = ['rock', 'paper', 'scissors'];
-    return compSelector[randomNum];
+    const compSelector = ['Rock', 'Paper', 'Scissors'];
+    const computerSelection = compSelector[randomNum];
+    return computerSelection;
 }
 
-function playRound (playerSelection, computerSelection) {
+document.getElementById('Rock').addEventListener('click', function (e) {
+    playRound(e.target.id);
+});
+document.getElementById('Paper').addEventListener('click', function (e) {
+    playRound(e.target.id);
+});
+document.getElementById('Scissors').addEventListener('click', function (e) {
+    playRound(e.target.id);
+});
 
+
+
+function playRound (playerSelection) {
+    computerSelection = computerPlay();
     let roundResult = null;
-
 
     if (playerSelection === computerSelection) {
         roundResult = `Nobody won! both selected ${playerSelection}`;
@@ -23,7 +31,7 @@ function playRound (playerSelection, computerSelection) {
 
     switch (playerSelection) {
         case "Rock":
-            if (computerSelection === "Scissor") {
+            if (computerSelection === "Scissors") {
                 roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
             } else if (computerSelection === "Paper") {
@@ -35,12 +43,12 @@ function playRound (playerSelection, computerSelection) {
             if (computerSelection === "Rock") {
                 roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
-            } else if (computerSelection === "Scissor") {
+            } else if (computerSelection === "Scissors") {
                 roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
                 computerScore++;
             }
             break;
-        case "Scissor":
+        case "Scissors":
             if (computerSelection === "Paper") {
                 roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
                 playerScore++;
@@ -50,7 +58,7 @@ function playRound (playerSelection, computerSelection) {
             }
             break;
     }
-    return roundResult;
+    console.log(roundResult);
 }
 
 function game() {
