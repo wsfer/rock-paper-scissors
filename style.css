@@ -30,6 +30,10 @@ a {
     flex-direction: column;
     background-color:rgb(219, 40, 40);
     border-radius: 20px;
+    border: 2px solid black;
+    margin: 8px;
+    width: 200px;
+    
 }
 
 img {
@@ -37,4 +41,12 @@ img {
     height: 50px;
     margin: 5px;
     border: 1px solid black;
+}
+
+#pScore, #cScore {
+    margin: 8px;
+    padding: 8px;
+    background-color:rgb(91, 91, 223);
+    width: 25px;
+    height: 25px;
 }
