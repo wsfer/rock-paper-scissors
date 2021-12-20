@@ -18,6 +18,9 @@ document.getElementById('Scissors').addEventListener('click', function (e) {
     playRound(e.target.id);
 });
 
+let playerScoreText = document.getElementById('pScore');
+let computerScoreText = document.getElementById('cScore');
+
 const results = document.getElementById('results');
 
 function playRound (playerSelection) {
@@ -58,8 +61,8 @@ function playRound (playerSelection) {
             break;
     }
     results.textContent = roundResult;
-    document.getElementById('pScore').textContent = playerScore;
-    document.getElementById('cScore').textContent = computerScore;
+    playerScoreText.textContent = playerScore;
+    computerScoreText.textContent = computerScore;
     if (playerScore == 5 || computerScore == 5) {
         checkGame();
     }
